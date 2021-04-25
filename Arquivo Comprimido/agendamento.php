@@ -5,31 +5,28 @@ include_once 'includes/header.php';
 ?>
 <h1 class="white-text">Ola 
 <!--<?php echo $dados['nome']; ?>-->
-</h1> 
+,</h1> 
 <div style="text-align:center;">
 
-// <input type="hidden" name="idUsuario" value="<?php echo $dados['idUsuario']; ?>">
-
 <h4 class="white-text">Bora agendar!</h4>
-<form action="php_action/agendar.php" method="POST"> 
 
 <div class="input-field col s12">
 <h5 class="white-text">Quando?</h5>
-<input type="text" id="data" name="data" class="datepicker" value="Escolher a data" style="text-align:center;">
+<input type="text" id="data" class="datepicker" value="Escolher a data" style="text-align:center;">
 
-<input type="text" name="horas" id="horas" class="timepicker" value="Escolher o horario" style="text-align:center;">
+<input type="text" id="horas" class="timepicker" value="Escolher o horario" style="text-align:center;">
 
 </div>
 
 <div class="row">
 <h5 class="white-text">O que vamos fazer?</h5>
-
+<form class="col s12" >
 <div class="input-field col s12">
 <select multiple>
 <option value="" disabled selected>Selecionar serviços :</option>
-<option id="1" name="1" value="1">Corte</option>
-<option id="2" name="2" value="2">Barba</option>
-<option id="3" name="3" value="3">sombrancelha</option>
+<option id="1" value="1">Corte</option>
+<option id="2" value="2">Barba</option>
+<option id="3" value="3">sombrancelha</option>
 </optgroup>
 </select>
 </div>
