@@ -20,6 +20,7 @@ if(isset($_POST['btn-entrar'])):
 
         //verificar se o que veio da variável resultado é maior do que zero se sim o usuário existe no banco de dados
 
+        
         if(mysqli_num_rows($resultado) > 0):
             $senha = md5($senha);
             $sql = "SELECT * FROM usuario WHERE login = '$login' AND senha = '$senha'";
