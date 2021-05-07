@@ -5,13 +5,14 @@
 <?php
 
 //Connection
-include_once 'php-action/db_connect.php';
+include_once 'php_action/db_connect.php';
 
 //Header
 include_once 'includes/header.php';
 
 //Mensagem
-include_once 'includes/mensagem.php';
+//include_once 'includes/mensagem.php';
+
 
 ?>
 
@@ -33,10 +34,10 @@ include_once 'includes/mensagem.php';
             <tbody>
                 <?php
 
-                    $idUsuario = mysqli_escape_string($connect, $_POST['idUsuario']);
+                 //   $idUsuario = mysqli_escape_string($connect, $_POST['idUsuario']);
 
                     $sql = "SELECT * FROM historico_servicos LEFT JOIN agendar_servicos ON agendar_servicos.idagendar_servicos=historico_servicos.idagendar_servicos 
-                    LEFT JOIN usuario ON usuario.idUsuario=agendar_servicos.usuario WHERE usuario.idUsuario=<?php echo $dados['idUsuario']; ?>";
+                    LEFT JOIN usuario ON usuario.idUsuario=agendar_servicos.usuario WHERE usuario.idUsuario=3";
 
                     $resultado = mysqli_query($connect, $sql);
                     if(mysqli_num_rows($resultado) > 0):
