@@ -2,7 +2,6 @@
     session_start();
 
     require_once 'db_connect.php';
-    
 
     if(isset($_POST['btn-editar'])):
         $nome_usuario = mysqli_escape_string($connect, $_POST['nome_usuario']);
@@ -14,7 +13,8 @@
 
         $idUsuario = mysqli_escape_string($connect, $_POST['idUsuario']);
  
-        $sql = "UPDATE usuario SET nome_usuario = '$nome_usuario', senha = MD5('$senha'), login = '$login', email = '$email', cpf = '$cpf', telefone = '$telefone' WHERE idUsuario = '$idUsuario'";
+        $sql = "UPDATE usuario SET nome_usuario = '$nome_usuario', senha = MD5('$senha'), login = '$login', email = '$email', cpf = '$cpf', telefone = '$telefone'
+        WHERE idUsuario = '$idUsuario'";
    
     if(mysqli_query($connect, $sql)):
         $_SESSION['mensagem'] = "Alterado com sucesso!";

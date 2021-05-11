@@ -13,8 +13,6 @@ if(isset($_POST['btn-agendar'])) {
     $dataformat = date("Y-m-d", strtotime($data));
     $horaformatada = date("H:i",strtotime($horas));
 
-//echo $idUsuario;
-
 /*  insert na tabela agendar servicos    */
 $sql = "INSERT INTO agendar_servicos( data_solicitacao, data_servico, horas , usuario, servicos) VALUES (now(),'$dataformat','$horaformatada','$idUsuario','$servicos')";
 $sql = mysqli_query($connect, $sql); 
@@ -28,8 +26,6 @@ $idagendar = mysqli_escape_string($connect, $result['id']);
 $sql = "INSERT INTO historico_servicos(idagendar_servicos, data_solicitacao, data_servico, servicos, status) VALUES ('$idagendar',now(), '$dataformat','$servicos','1')";
   $sql = mysqli_query($connect, $sql);   
     }
-
-   // echo 'ID agendar '.$idagendar;
 
     if(mysqli_query($connect, $sql)):
         $_SESSION['mensagem'] = "Agendado com sucesso!";
